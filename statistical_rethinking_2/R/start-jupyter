@@ -1,55 +1,21 @@
 #!/bin/bash
 
-while getopts c: option
-do
-    case "${option}"
-    in
-        c) COURSE=${OPTARG};;
-        \?) ## Invalid option
-            printf "Error: invalid option.\n\n"
-            exit;;
-    esac
-done
+#while getopts c: option
+#do
+#    case "${option}"
+#    in
+#        c) COURSE=${OPTARG};;
+#        \?) ## Invalid option
+#            printf "Error: invalid option.\n\n"
+#            exit;;
+#    esac
+#done
 
-printf  "\n==================  "
-printf  "\n Selecting Course  \n"
-printf  "==================  \n\n"
+#if [ "${COURSE}" == "Intro_to_NGS" ]
 
-if [ "${COURSE}" == "Intro_to_NGS" ]
-then
-    echo "-----> Chosen course: Introduction to NGS data"
-    if [ ! -d "Intro_to_NGS" ];
-    then
-        echo "-----> Linking fresh course material."
-        ln -s /usr/Intro_to_NGS /work/Intro_to_NGS
-    else
-        echo "-----> Using your own course material."
-    fi
+#${CONDA_DIR}/envs/rethinking_R/bin/R -e "IRkernel::installspec(user=TRUE, name = 'rethinking_R', displayname = 'rethinking_R')"
 
-    ### install kernels - this goes into start-jupyter
-    echo "-----> Installing course kernels on jupyterlab"
-    "${CONDA_DIR}"/envs/NGS_aarhus_py/bin/python -m ipykernel install --user --name="NGS_python" --display-name "NGS (Python)" && \
-    "${CONDA_DIR}"/envs/NGS_aarhus_r/bin/R -e "IRkernel::installspec(user=TRUE, name = 'NGS_R', displayname = 'NGS (R)')"
-
-    ### modify kernel files with system variables
-    cp /usr/Intro_to_NGS/Environments/kernel_py_docker.json ~/.local/share/jupyter/kernels/ngs_python/kernel.json && \
-    cp /usr/Intro_to_NGS/Environments/kernel_R_docker.json ~/.local/share/jupyter/kernels/ngs_r/kernel.json
-    
-    printf  "\n==================  "
-    printf  "\n Start JupyterLab  \n"
-    printf  "==================  \n\n"
-    #add course name as variable to be used
-    bash -c "COURSE=${COURSE} jupyter lab --NotebookApp.token='' "
-
-fi
-
-if [ "${COURSE}" == "IGV Genomic Browser" ]
-then
-    echo "-----> Chosen tool: Interactive Genomic Browser"
-    cd /usr/igv-webapp
-    npx http-server --port 8787 -a 0.0.0.0 dist
-    
-fi
+bash -c "jupyter lab --NotebookApp.token='' "
 
 
 

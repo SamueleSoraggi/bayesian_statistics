@@ -1,4 +1,3 @@
-name: /Users/au612681/rethinking
 channels:
   - plotly
   - anaconda
@@ -6,11 +5,15 @@ channels:
   - bioconda
   - conda-forge
   - defaults
+  - brinkerhoffc
 dependencies:
   - r-base
   - r-rstan
   - r-rstantools
   - r-rstanarm
+  - r-cmdstanr
+  - r-codetools
+  - r-scatterpie
   - openmp
   - libclang
   - r-coda
@@ -23,4 +26,3 @@ dependencies:
   - jupyterlab
   - rise
   - r-remotes
-prefix: /Users/au612681/rethinking
