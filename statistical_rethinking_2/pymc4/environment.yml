@@ -1,5 +1,6 @@
 channels:
 - conda-forge
+- anaconda
 dependencies:
   - jupyter
   - jupyterlab
@@ -9,6 +10,8 @@ dependencies:
   - pymc==4.3.0
   - arviz==0.13.0
   - aeppl==0.0.38
+  - aesara-base
+  - gcc_linux-64
   - aesara==2.8.7
   - theano-pymc==1.1.2
   - tqdm
