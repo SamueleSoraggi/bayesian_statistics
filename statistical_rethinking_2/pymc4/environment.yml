@@ -1,6 +1,6 @@
+name: /work/home/SamueleSoraggi#7953/Repositories/bayesian_statistics/statistical_rethinking_2/pymc4/pymc4_env
 channels:
-- conda-forge
-- anaconda
+  - conda-forge
 dependencies:
   - jupyter
   - jupyterlab
@@ -16,13 +16,5 @@ dependencies:
   - theano-pymc==1.1.2
   - tqdm
   - mkl
-  - mkl-service
   - pip
-  - pip:
-    - daft
-    - causalgraphicalmodels
-     - watermark
-     - "git+git://github.com/arviz-devs/arviz.git@main"
-     - "git+git://github.com/pymc-devs/pymc.git@main"
-     - causalgraphicalmodels
-     - daft
+prefix: /work/home/SamueleSoraggi#7953/Repositories/bayesian_statistics/statistical_rethinking_2/pymc4/pymc4_env
