@@ -16,5 +16,7 @@ dependencies:
   - theano-pymc==1.1.2
   - tqdm
   - mkl
+  - graphviz
+  - python-graphviz
   - pip
 prefix: /work/home/SamueleSoraggi#7953/Repositories/bayesian_statistics/statistical_rethinking_2/pymc4/pymc4_env
